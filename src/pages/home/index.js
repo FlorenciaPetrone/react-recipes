@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import {useHistory} from "react-router-dom" 
+import {useHistory, Link} from "react-router-dom" 
 import RecipeSearch from "../../components/RecipeSearch"
 import "./styles.css"
 
@@ -30,7 +30,7 @@ const Home = () => {
                         submitHandler={getSearch}
                     />
                     <div className="link-container">
-                        <a href="/search">Advanced Search</a>
+                        <Link to="/search">Advanced Search</Link>
                     </div>
                 </div>
             </div>
