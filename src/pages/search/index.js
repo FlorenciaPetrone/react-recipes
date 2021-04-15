@@ -23,8 +23,6 @@ const Search = () => {
     })
     const [pagination, setPagination] = useState()
 
-    console.log(config)
-
     //Normal and Filtered Search functions
     const getAllRecipes = async () => {
         const response = await getRecipes({...config, ...filters});
@@ -32,23 +30,24 @@ const Search = () => {
         const paginationRelated = { offset: response.offset, number: response.number, totalResults: response.totalResults };
         setPagination(paginationRelated);
         const previousConfig = {...config, ...filters}
-        localStorage.setItem("previousConfig", JSON.stringify(previousConfig))
-        
+        localStorage.setItem("previousConfig", JSON.stringify(previousConfig)) 
     }
-    useEffect(() => {
-        const previousConfig = localStorage.getItem("previousConfig")
-        if(previousConfig){
-            setConfig({query: previousConfig.query, offset: previousConfig.query, number: previousConfig.number})
-            setFilters({cuisine: previousConfig.cuisine, diet: previousConfig.diet, intolerances: previousConfig.intolerances})
-        }
-        
-    }, [])
-
     useEffect(() => {
         if(config.query !== ""){
             getAllRecipes()
         }
     }, [config, filters]);
+
+    //LocalStorage functions
+    //llego a guardar la data en localstorage pero no hacer la parte del if. Boton next deja de funcionar
+    useEffect(() => {
+        const savedConfig = localStorage.getItem("previousConfig")
+        console.log(savedConfig)
+        if(savedConfig){
+            setConfig({query: savedConfig.query, offset: savedConfig.offset, number: savedConfig.number})
+            setFilters({cuisine: savedConfig.cuisine, diet: savedConfig.diet, intolerances: savedConfig.intolerances})
+        }
+    }, [])
 
     const updateQuery = (e) => {
         setTyping(e.target.value)
@@ -70,7 +69,7 @@ const Search = () => {
         setConfig(newConfig);
     }
 
-   
+    
 
     return(
         <div className="search-container">

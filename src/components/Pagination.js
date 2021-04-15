@@ -40,5 +40,5 @@ const Pagination = ({number, offset, totalResults, ...props}) => {
         </div>
     )
 }
-
+ 
 export default Pagination
