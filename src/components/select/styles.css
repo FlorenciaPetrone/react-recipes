@@ -1,0 +1,95 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 160px;
+  margin: 10px;
+}
+
+.value-container {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 20px;
+  justify-content: space-evenly;
+  padding: 7px 0px;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  background-color: #eadbcc;
+  color: #916338;
+  cursor: pointer;
+}
+
+.value-container i {
+  font-size: 25px;
+  margin-top: 2px;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+}
+
+.value-container-open {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 20px;
+  justify-content: center;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  background-color: #eadbcc;
+  cursor: pointer;
+}
+
+.options-container {
+  position: relative;
+  background-color: #eadbcc;
+  font-size: 16px;
+  margin-top: -1px;
+  padding-top: 20px;
+  z-index: 1;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.option-container {
+  padding: 4px 0;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.option-container:hover {
+  color: white;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+  .select-container {
+    margin: 0 5px;
+    width: 35.33%;
+  }
+  .value-container {
+    font-size: 13px;
+    justify-items: baseline;
+    padding: 2px 0px;
+  }
+  .value-container span {
+    margin-top: 4px;
+  }
+  .value-container i {
+    font-size: 20px;
+    margin-top: 3px;
+  }
+  .value-container-open {
+    font-size: 16px;
+  }
+  .options-container {
+    padding-top: 5px;
+  }
+  .option-container {
+    padding: 4px 0;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+  }
+}

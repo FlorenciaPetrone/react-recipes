@@ -1,0 +1,16 @@
+.filters-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px auto auto;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  flex-wrap: nowrap;
+  height: 40px;
+  font-family: sans-serif;
+  width: 90%;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 10px;
+}
