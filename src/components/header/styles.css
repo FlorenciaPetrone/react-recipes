@@ -5,6 +5,7 @@
   min-height: 70px;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
 }
 
 .home-icon {
