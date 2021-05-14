@@ -12,7 +12,7 @@ const Home = () => {
   const updateQuery = (e) => {
     setQuery(e.target.value);
   };
-
+  //Key + value
   const getSearch = async (e) => {
     e.preventDefault();
     history.push(`/search?userInput=${query}`);
