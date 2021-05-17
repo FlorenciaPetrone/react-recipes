@@ -21,3 +21,7 @@ export const getRecipeDetails = async (id) => {
   );
   return response.data;
 };
+
+export const updateUserData = async (data) => {
+  return await axios.post("https://hookb.in/Px6jwdPnOnuLaaWDQnjK", data);
+};

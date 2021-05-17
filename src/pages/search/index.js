@@ -11,21 +11,15 @@ const Search = () => {
   const searchParams = new URLSearchParams(location.search);
   const userInput = searchParams.get("userInput");
 
-  const previousConfig = JSON.parse(localStorage.getItem("previousConfig"));
   //Search setUp
   const [recipes, setRecipes] = useState([]);
-  const defaultFilters = {
-    cuisine: previousConfig.cuisine,
-    diet: previousConfig.diet,
-    intolerances: previousConfig.intolerances,
-  };
-  const [filters, setFilters] = useState(defaultFilters);
-  const [typing, setTyping] = useState(userInput || previousConfig.query || "");
+  const [filters, setFilters] = useState();
+  const [typing, setTyping] = useState(userInput || "");
   //Pagination setUp
   const [config, setConfig] = useState({
-    query: userInput || previousConfig.query || "",
-    offset: previousConfig.offset || 0,
-    number: previousConfig.number || 20,
+    query: userInput || "",
+    offset: 0,
+    number: 20,
   });
   const [pagination, setPagination] = useState();
 
@@ -40,7 +34,6 @@ const Search = () => {
     };
     setPagination(paginationRelated);
     const previousConfig = { ...config, ...filters };
-    localStorage.setItem("previousConfig", JSON.stringify(previousConfig));
   };
 
   useEffect(() => {
