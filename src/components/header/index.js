@@ -20,6 +20,9 @@ const NavBar = () => {
         <Link to="/search" className={getClassName("/search")}>
           Search
         </Link>
+        <Link to="/contact" className={getClassName("/contact")}>
+          Contact
+        </Link>
       </div>
       <div className="social-media-container-header">
         <a href="https://github.com/FlorenciaPetrone" target="_blank">

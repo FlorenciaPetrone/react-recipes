@@ -6,6 +6,7 @@ import "./styles.css";
 import Home from "./pages/home";
 import RecipeDetails from "./pages/recipeDetails";
 import Search from "./pages/search";
+import Contact from "./pages/contact";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/recipe/:id" component={RecipeDetails} />
+          <Route path="/contact" component={Contact} />
         </Switch>
       </div>
       <Footer />

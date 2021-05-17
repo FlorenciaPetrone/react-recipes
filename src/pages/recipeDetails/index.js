@@ -10,8 +10,7 @@ const RecipeDetails = () => {
   const summaryRef = useRef(null);
 
   const getSingleRecipe = async () => {
-    const flor = await getRecipeDetails(id);
-    setRecipe(flor);
+    setRecipe(await getRecipeDetails(id));
   };
 
   useEffect(() => {
